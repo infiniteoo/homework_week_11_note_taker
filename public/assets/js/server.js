@@ -22,9 +22,15 @@ app.get("/notes", function (req, res) {
 app.get("/api/notes", function (req, res) {
     // we need to return the contents of db.json 
     return res.json(fs.readFile("./db/db.json"));
-    
+
 });
 
+app.post("/api/notes", function (req, res) {
+
+
+
+
+});
 
 
 
@@ -44,3 +50,6 @@ DELETE /api/notes/:id - Should receive a query parameter containing the id of a 
 
 
 */
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+});
