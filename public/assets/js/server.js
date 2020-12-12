@@ -19,7 +19,12 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "notes.html"));
 });
 
-// need to connect to the json database we're using
+app.get("/api/notes", function (req, res) {
+    // we need to return the contents of db.json 
+    return res.json(fs.readFile("./db/db.json"));
+    
+});
+
 
 
 
