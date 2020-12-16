@@ -7,9 +7,12 @@ let app = express();
 
 var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing
+// Sets up the Express app to handle data parsing | middlewear
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// not exactly sure what this is yet, but paul told me to add it
+// and it worked.  thanks paul
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
@@ -23,9 +26,11 @@ app.get("/notes", function (req, res) {
 });
 
 
+// api routes
 
 app.get("/api/notes", function (req, res) {
     // we need to return the contents of db.json 
+    console.log(res.json(fs.readFile("./db/db.json")));
     return res.json(fs.readFile("./db/db.json"));
 
 }); 
