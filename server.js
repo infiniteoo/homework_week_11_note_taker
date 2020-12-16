@@ -18,14 +18,8 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/assets/index.html"));
 });
 
-
-
-/* app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/tables.html"));
-  }); */
-
-/* app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "../notes.html"));
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "/public/assets/notes.html"));
 });
 
 
@@ -34,8 +28,10 @@ app.get("/api/notes", function (req, res) {
     // we need to return the contents of db.json 
     return res.json(fs.readFile("./db/db.json"));
 
-});
+}); 
 
+
+/* 
 app.post("/api/notes", function (req, res) {
 
 
