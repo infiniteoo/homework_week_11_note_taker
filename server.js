@@ -30,7 +30,13 @@ app.get("/notes", function (req, res) {
 
 app.get("/api/notes", function (req, res) {
     // we need to return the contents of db.json 
-    console.log(res.json(fs.readFile("./db/db.json")));
+    let databaseFile = fs.readFile("./db/db.json", (err,data) => {
+        if (err) throw err;
+        console.log(data);
+        return res.json(data);
+
+
+    });
     return res.json(fs.readFile("./db/db.json"));
 
 }); 
