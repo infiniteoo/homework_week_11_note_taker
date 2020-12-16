@@ -11,10 +11,14 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/public", express.static(path.join(__dirname, "public")));
+
 // basic html routes
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "/public/assets/index.html"));
 });
+
+
 
 /* app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/tables.html"));
