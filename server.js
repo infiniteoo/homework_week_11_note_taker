@@ -30,6 +30,13 @@ app.get("/notes", function (req, res) {
 
 
 // api routes
+// please see README.md regarding this section of code
+// all credit for API calls are due to fellow student Kristina Hamilton
+
+// i wrote the rest but due to a job loss, cross country move, and a five day delay in getting my internet set up, combined with needing to unpack,
+// i simply ran out of time to complete this project.  i plan on re-submitting over the holiday break to get caught up.
+
+
 
 app.get("/api/notes", (req, res) => {
     fs.readFile("./db/db.json", (err, notesData) => {
